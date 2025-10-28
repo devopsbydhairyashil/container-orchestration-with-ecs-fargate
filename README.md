@@ -25,7 +25,7 @@ The example demonstrates build pipelines, image promotion to ECR, and zero-downt
 
 ---
 
-Connect with me on LinkedIn: https://www.linkedin.com/in/dhairyashil-bhosale
+Connect with me on LinkedIn: https://www.linkedin.com/in/dhairyashilclouddevops/
 
 
 ---
