@@ -1,0 +1,23 @@
+version: 2.1
+orbs:
+  aws-ecr: circleci/aws-ecr@7.1.0
+
+jobs:
+  build-and-push:
+    docker:
+      - image: cimg/python:3.9
+    steps:
+      - checkout
+      - run: docker --version
+      - run:
+          name: Build image
+          command: |
+            docker build -t sample-web:$CIRCLE_SHA1 app/
+      - aws-ecr/push-image:
+          repo: sample-web
+          tag: $CIRCLE_SHA1
+
+workflows:
+  build-deploy:
+    jobs:
+      - build-and-push
